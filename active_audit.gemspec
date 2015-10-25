@@ -10,11 +10,11 @@ Gem::Specification.new do |s|
   s.authors     = ["aquinofb"]
   s.email       = ["aquinofb@gmail.com"]
   s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ActiveAudit."
-  s.description = "TODO: Description of ActiveAudit."
+  s.summary     = "A simple way to add active audit to your Rails app"
+  s.description = "A simple way to add active audit to your Rails app"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.2.4"
