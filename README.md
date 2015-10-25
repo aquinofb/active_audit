@@ -37,18 +37,36 @@ module MyCustomActiveAudit
   # add a specific rule to the resource
   when_the :attribute_name, change_from: nil, to: "a new value", do: :doit_method, if: :a_block_or_method
 
+  def your_method_to_treat_this
+    # Ex: Notify someone
+  end
+
+  def hook_method_condition
+    true
+  end
+
+  # ...
 end
 ```
-### Methods
 
-#### attributes
+Its done, configure the model that you must to be audited:
+
+```ruby
+class Product < ActiveRecord::Base
+  active_audit_by :my_custom_active_audit
+end
+```
+
+## Methods
+
+### attributes
 `#Todo`
 
-#### required_attributes
+### required_attributes
 `#Todo`
 
-#### add_hook
+### add_hook
 `#Todo`
 
-#### when_the
+### when_the
 `#Todo`
