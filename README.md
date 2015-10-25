@@ -11,7 +11,7 @@ gem 'active_audit'
 
 Run the bundle command to install it.
 
-After you add it to your Gemfile, you need to create a custom module that extend ActiveAudit::Rules::Base, like following:
+After you add it to your Gemfile, you need to create a custom module that extend `ActiveAudit::Rules::Base`, like following:
 
 ```ruby
 module MyCustomActiveAudit
@@ -49,7 +49,7 @@ module MyCustomActiveAudit
 end
 ```
 
-Its done, configure the model that you must to be audited:
+Its done! Now you must need configure the `model` that you need to be audited:
 
 ```ruby
 class Product < ActiveRecord::Base
