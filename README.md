@@ -1,2 +1,2 @@
-# active_audit
-A simple DSL to add active audit to your Rails app
+# Active Audit
+A simple way to add active audit to your Rails app
