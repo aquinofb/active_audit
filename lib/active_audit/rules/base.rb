@@ -10,12 +10,18 @@ module ActiveAudit
         hooks << {:"#{name}" => opts}
       end
 
-      def hooks
-        @hooks ||= []
-        @hooks
+      def each_hook &block
+        hooks.each do |hook|
+          yield(hook.keys.first, hook.values.first)
+        end
       end
 
       private
+        def hooks
+          @hooks ||= []
+          @hooks
+        end
+
         def rules
           @rules ||= []
           @rules
