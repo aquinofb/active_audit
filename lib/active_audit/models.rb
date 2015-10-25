@@ -6,7 +6,6 @@ module ActiveAudit
       mod.extend ActiveSupport::Concern
       mod.module_eval do
         included do
-          puts mod.hooks
           mod.hooks.each do |hook|
             self.send(hook.keys.first, *hook.values.first)
           end
