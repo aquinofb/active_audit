@@ -49,7 +49,7 @@ module MyCustomActiveAudit
 end
 ```
 
-Its done! Now you must need configure the `model` that you need to be audited:
+Its done! Now you just need to configure the `model` that you need to be audited:
 
 ```ruby
 class Product < ActiveRecord::Base
@@ -57,7 +57,7 @@ class Product < ActiveRecord::Base
 end
 ```
 
-## Methods
+## Configuration methods
 
 ### attributes
 `#Todo`
@@ -70,3 +70,19 @@ end
 
 ### when_the
 `#Todo`
+
+## TODO
+
+* Create a model that contains specific rules
+
+## License
+
+MIT License (MIT)
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
