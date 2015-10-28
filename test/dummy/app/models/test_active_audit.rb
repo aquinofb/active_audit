@@ -1,10 +1,11 @@
-module Aff
+module TestActiveAudit
   extend ActiveAudit::Rules::Base
 
   attributes :nome, :idade
-  add_hook :before_save, :meu_metodo, if: :teste
+  required_attributes :nome
+  # add_hook :before_save, :meu_metodo, if: :teste
 
-  when_the :name, change_to: "produtao", do: :ta_fazendo, if: :teste
+  # when_the :name, change_to: "produtao", do: :ta_fazendo, if: :teste
 
   def meu_metodo
     puts "*"*100
