@@ -19,7 +19,7 @@ module MyCustomActiveAudit
 end
 ```
 
-Once the custom module created, you can configure it:
+Once the custom module is created, you can configure it:
 
 ```ruby
 module MyCustomActiveAudit
