@@ -3,18 +3,12 @@ module ActiveAudit
     module Base
 
       def attributes(*attrs_list)
-        self.module_eval do
-          mattr_accessor :attrs
-        end
-
+        self.module_eval {mattr_accessor(:attrs)}
         self.attrs = attrs_list
       end
 
       def required_attributes(*attrs_list)
-        self.module_eval do
-          mattr_accessor :required_attrs
-        end
-
+        self.module_eval {mattr_accessor(:required_attrs)}
         self.required_attrs = attrs_list
       end
 
@@ -33,18 +27,21 @@ module ActiveAudit
       end
 
       def validate_json!(data)
-        valid_attributes?(data) && valid?(data)
+        data.symbolize_keys!
+        raise "Invalid attributes. Missing attributes: #{(self.attrs - data.keys).join(", ")}" unless valid_attributes?(data)
+        raise "Invalid json. Attribute #{required} is required" unless valid?(data)
       end
 
       private
         def valid_attributes?(data)
-          raise "Invalid attributes: #{(data.keys - attrs).join(", ")}" unless attrs.sort.eql?(data.keys.sort)
+          self.attrs.sort.eql?(data.keys.sort)
         end
 
         def valid?(data)
-          required_attrs.each do |required|
-            raise "Invalid json. Attribute #{required} is required" unless data.keys.include?(required) && data[required].present?
+          self.required_attrs.each do |required|
+            return false unless data.keys.include?(required) && data[required].present?
           end
+          true
         end
 
         def hooks
