@@ -17,11 +17,12 @@ module ActiveAudit
       end
 
       def add_hook(name, *opts)
-        hooks << {:"#{name}" => opts}
+        self.module_eval {mattr_accessor(:hooks)} unless self.respond_to?(:hooks)
+        self.hooks << {:"#{name}" => opts}
       end
 
       def each_hook(&block)
-        hooks.each do |hook|
+        self.hooks.each do |hook|
           yield(hook.keys.first, hook.values.first)
         end
       end
@@ -42,11 +43,6 @@ module ActiveAudit
             return false unless data.keys.include?(required) && data[required].present?
           end
           true
-        end
-
-        def hooks
-          @hooks ||= []
-          @hooks
         end
 
         def create_hook_for(attr, opts, &handler)
