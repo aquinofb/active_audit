@@ -19,7 +19,7 @@ module ActiveAudit
 
     class_methods do
       def active_audit_by mod
-        my_mod = mod.to_s.classify.constantize
+        my_mod = "#{mod}_active_audit".to_s.classify.constantize
         ActiveAudit::Models.config_module(my_mod)
         self.include(my_mod)
       end
