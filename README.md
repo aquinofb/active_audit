@@ -71,6 +71,9 @@ end
 ### when_the
 `#Todo`
 
+## Store your client rules
+ActiveAudit create a table called `active_audit_rules` that you can put a json with specific rules from your client to use in the ...
+
 ## TODO
 
 * Create a model that contains specific rules
