@@ -76,7 +76,6 @@ ActiveAudit create a table called `active_audit_rules` that you can put a json w
 
 ## TODO
 
-* Create a model that contains specific rules
 
 ## License
 
