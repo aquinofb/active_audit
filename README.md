@@ -72,7 +72,7 @@ end
 `#Todo`
 
 ## Store your client rules
-ActiveAudit create a table called `active_audit_rules` that you can put a json with specific rules from your client to use in the ...
+ActiveAudit create a table called `active_audit_rules` that you can put a json with specific rules from your client to use in the...
 
 ## TODO
 
