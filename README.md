@@ -76,7 +76,6 @@ ActiveAudit create a table called `active_audit_rules` that you can put a json w
 
 ## TODO
 
-
 ## License
 
 MIT License (MIT)
